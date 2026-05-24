@@ -13,8 +13,8 @@ services:
       - DATABASE_URL=${DATABASE_URL}
       - SUPABASE_URL=${SUPABASE_URL}
       - SUPABASE_KEY=${SUPABASE_KEY}
-      - NEXT_PUBLIC_API_URL=http://localhost:8000
-      - GEMINI_API_KEY=AIzaSyAwgSYlBTA0oAVoR1bMR08f8FYtjAFwUWo
+      - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
     
   frontend:
     build:
@@ -29,6 +29,6 @@ services:
     environment:
       - NEXT_PUBLIC_SUPABASE_URL=${SUPABASE_URL}
       - NEXT_PUBLIC_SUPABASE_ANON_KEY=${SUPABASE_KEY}
-      - NEXT_PUBLIC_API_URL=http://localhost:8000
+      - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
     depends_on:
       - backend
