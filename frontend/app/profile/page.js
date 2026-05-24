@@ -20,7 +20,7 @@ export default function ProfileSettings() {
             router.push("/login");
             return;
         }
-        setName(localStorage.getItem("sentinal_user_name") || "Developer Node");
+        setName(localStorage.getItem("sentinal_user_name") || "User");
         setEmail(localStorage.getItem("sentinal_user_email") || "");
     }, [router]);
 

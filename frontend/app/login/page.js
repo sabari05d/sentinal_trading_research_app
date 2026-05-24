@@ -26,6 +26,10 @@ export default function Login() {
             setLoading(false);
         } else {
             localStorage.setItem("sentinal_user_id", data.user.id);
+            localStorage.setItem("sentinal_user_name", data.user.user_metadata.display_name || "Sabarinathan");
+            localStorage.setItem("sentinal_user_email", data.user.email);
+
+            // Example of how Supabase returns it to your client application
             router.push("/dashboard");
         }
     };

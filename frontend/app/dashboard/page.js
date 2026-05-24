@@ -148,7 +148,7 @@ function CommandHeader({ liveCount, lastSync }) {
         };
 
         updateClock(); // Initial client timestamp assignment
-        const interval = setInterval(updateClock, 1000); // Keep it running
+        const interval = setInterval(updateClock, 60000); // Keep it running
 
         return () => clearInterval(interval);
     }, []);
@@ -177,7 +177,7 @@ function CommandHeader({ liveCount, lastSync }) {
                 </div>
 
                 {/* Live clock + sync badge */}
-                <div className="flex items-center gap-3 flex-shrink-0">
+                <div className="flex items-center gap-3 shrink-0">
                     <div className="flex flex-col items-end gap-1">
                         <div className="flex items-center gap-2 bg-zinc-900/60 border border-zinc-800 rounded-lg px-3 py-1.5">
                             <PulseDot active />
@@ -285,7 +285,7 @@ function PortfolioMetricStrip({ watchlist }) {
 
                     <div className="flex items-start justify-between gap-2 mb-3">
                         <span className="text-[10px] font-black text-zinc-500 tracking-widest leading-tight">{m.label}</span>
-                        <span className={`text-base ${m.iconColor} flex-shrink-0 leading-none`}>{m.icon}</span>
+                        <span className={`text-base ${m.iconColor} shrink-0 leading-none`}>{m.icon}</span>
                     </div>
                     <div className={`text-xl font-black font-mono tracking-tight ${m.accent} leading-none`}>
                         {m.value}{m.suffix && <span className="text-[11px] text-zinc-600 font-normal ml-1">{m.suffix}</span>}
